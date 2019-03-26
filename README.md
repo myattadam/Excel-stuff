@@ -6,7 +6,7 @@
 
 * The ``Static`` keyword on a function variable 'remembers' what it contains even after exiting a function:
 
-```
+```VBA
 Function Records() as Dictionary
   Static data As Dictionary
 
