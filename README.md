@@ -2,8 +2,7 @@
 
 ## VBA tricks
 
-* When plotting series, use ``Empty`` to ignore plotting a point (Do not use ``Null`` as this can cause type mismatch errors)
-
+* When plotting a data series, use ``Empty`` to ignore plotting a point (Do not use ``Null`` as this can cause type mismatch errors)
 
 * The ``Static`` keyword on a function variable 'remembers' what it contains even after exiting a function:
 
