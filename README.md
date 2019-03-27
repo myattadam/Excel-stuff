@@ -30,7 +30,7 @@ End Function
 
 On first calling ``Records()``, the function first checks to see if there's anything assigned to ``data`` and if not, creates and assigns a dictionary object. On exiting the function, it returns the ``data`` object. Calling ``Records()`` a second time, the function remembers that ``data`` has already been assigned and updates and returns ``data`` instead.
 
-## datepicker.xlsm
+## [datepicker.xlsm](https://github.com/myattadam/Excel-stuff/blob/master/datepicker.xlsm)
 I built this as a 'native' date picking tool as Excel 2010 doesn't come with a standard form control.
 To use it in a workbook, copy the form and class to the workbooks project tree. To open the form, call _frmDatePicker.showForm Range("A1")_, replacing A1 with the destination cell the date needs to be written to.
 
