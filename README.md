@@ -2,6 +2,10 @@
 
 ## VBA tricks
 
+* Dates as variables can be entered in the following format: ``#yyyy/mm/dd#`` or ``#mm/dd/yyyy#``. Regardless of what method is used, VBA will automatically default to ``#mm/dd/yyy#``.
+
+* When pulling data from a table in a dictionary, erroneous cell values will not be entered; you need to perform an ``IsError(value)`` check and apply an alternative if true.
+
 * Remember when using the ``IIF`` function, that it will evaluate both parts of the _true_ and _false_ arguements. If there's a possiblity of returning an error from either of these, don't use this function.
 
 * When plotting series, use a ``variant`` array to set the values. For missing data, use an ``Empty`` value and Excel will ignore plotting the point (Do not use ``Null`` as this can cause type mismatch errors).
@@ -9,7 +13,7 @@
 
 * The ``Static`` keyword on a function variable 'remembers' what it contains even after exiting a function:
 
-```VB
+```basic
 Function Records() as Dictionary
   Static data As Dictionary
 
