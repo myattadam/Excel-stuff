@@ -1,4 +1,4 @@
-# Excel tools and macro development
+# VBA tools and macro development
 
 ## VBA tricks
 
@@ -8,7 +8,7 @@
 
 * Remember when using the ``IIF`` function, that it will evaluate both parts of the _true_ and _false_ arguements. If there's a possiblity of returning an error from either of these, don't use this function.
 
-* When plotting series, use a ``variant`` array to set the values. For missing data, use an ``Empty`` value and Excel will ignore plotting the point (Do not use ``Null`` as this can cause type mismatch errors).
+* \[Excel\] When plotting series, use a ``variant`` array to set the values. For missing data, use an ``Empty`` value and Excel will ignore plotting the point (Do not use ``Null`` as this can cause type mismatch errors).
 
 
 * The ``Static`` keyword on a function variable 'remembers' what it contains even after exiting a function:
