@@ -30,7 +30,7 @@ End Function
 
 On first calling ``Records()``, the function first checks to see if there's anything assigned to ``data`` and if not, creates and assigns a dictionary object. On exiting the function, it returns the ``data`` object. Calling ``Records()`` a second time, the function remembers that ``data`` has already been assigned and updates and returns ``data`` instead.
 
-## [Dictionary to JSON](https://github.com/myattadam/Excel-stuff/blob/master/DictToJSON.bas)
+## [Dictionary to JSON](https://github.com/myattadam/VBA-stuff/blob/master/DictToJSON.bas)
 This simple set of functions converts a dictionary object to JSON format.
 ```VB
 Sub saveJSON(filename As String, entity As Variant)
@@ -42,7 +42,7 @@ Function toJSON(entity As Variant) As String
 ```
 A recursive function that converts a dictionary object (and it's contents, whether they veriables, arrays, other dictionarys, etc.) to a JSON string.
 
-## [datepicker.xlsm](https://github.com/myattadam/Excel-stuff/blob/master/datepicker.xlsm)
+## [datepicker.xlsm](https://github.com/myattadam/VBA-stuff/blob/master/datepicker.xlsm)
 I built this as a 'native' date picking tool as Excel 2010 doesn't come with a standard form control.
 To use it in a workbook, copy the form and class to the workbooks project tree. To open the form, call _frmDatePicker.showForm Range("A1")_, replacing A1 with the destination cell the date needs to be written to.
 
