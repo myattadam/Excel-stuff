@@ -53,3 +53,6 @@ I built this as a 'native' date picking tool as Excel 2010 doesn't come with a s
 To use it in a workbook, copy the form and class to the workbooks project tree. To open the form, call _frmDatePicker.showForm Range("A1")_, replacing A1 with the destination cell the date needs to be written to.
 
 _Note: Still needs a bit of work. I want to remove the hard coding for some of the values that set the colour of the buttons, etc._
+
+### [shape_tools.ppam](https://github.com/myattadam/VBA-tools/blob/master/shape_tools.ppam)
+This add-in currently contains a tool for copying and pasting just the size and position of a shape or range of shapes. The order in which you select the shapes to copy (shift click a shape to select more than one at a time) determines the order in which the size and positions are applied. Use this tool to quickly grab a layout of a slide and reapply it with a bunch of other shapes (including tables).
