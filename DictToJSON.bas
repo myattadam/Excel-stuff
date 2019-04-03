@@ -1,14 +1,3 @@
-Option Explicit
-
-Sub saveJSON(filename As String, entity As Variant)
-    Dim fs As New FileSystemObject
-    Dim ts As TextStream
-    
-    Set ts = fs.OpenTextFile(ActiveWorkbook.Path & "\" & filename, ForWriting, True)
-    ts.Write toJSON(entity)
-    ts.Close
-End Sub
-
 Function toJSON(entity As Variant) As String
     
     Dim index As Long
@@ -33,6 +22,9 @@ Function toJSON(entity As Variant) As String
             Case "Integer", "Long", "Single", "Double"
                 s = s & entity
                 
+            Case "Boolean"
+                s = s & """" & entity & """"
+                
             Case "String"
                 s = s & """" & entity & """"
                 
@@ -48,8 +40,20 @@ Function toJSON(entity As Variant) As String
                     If index < UBound(keylist) Then s = s & ","
                 Next
                 
-                
                 s = s & "}"
+                     
+            Case "Collection"
+                s = s & "["
+                
+                For index = 1 To entity.count
+                    s = s & toJSON(entity(index))
+                    If index < entity.count Then s = s & ","
+                Next
+                
+                s = s & "]"
+            
+            Case Else
+                s = s & """" & TypeName(entity) & """"
             
         End Select
     End If
