@@ -1,3 +1,12 @@
+Sub saveJSON(filename As String, Entity As Variant)
+    Dim fs As New FileSystemObject
+    Dim ts As TextStream
+    
+    Set ts = fs.OpenTextFile(ActiveWorkbook.Path & "\" & filename, ForWriting, True)
+    ts.Write toJSON(Entity)
+    ts.Close
+End Sub
+
 Function toJSON(entity As Variant) As String
     
     Dim index As Long
