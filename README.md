@@ -93,9 +93,10 @@ AnyNumberArgs "Kelly", "High", "Low", "Average", "High"
 ```
 
 ### Miscellaneous
-* Remember when using the ``IIF`` function, that it will evaluate both parts of the _true_ and _false_ arguements. If there's a possiblity of returning an error from either of these, don't use this function.
+Remember when using the ``IIF`` function, that it will evaluate both parts of the _true_ and _false_ arguements. If there's a possiblity of returning an error from either of these, don't use this function.
 
-* The ``Static`` keyword on a function variable 'remembers' what it contains even after exiting a function:
+#### The Static keyword
+The ``Static`` keyword on a function variable 'remembers' what it contains even after exiting a function:
 
 ```basic
 Function Records() as Dictionary
@@ -111,7 +112,9 @@ Function Records() as Dictionary
   Set Records = data
 End Function
 ```
-This function lets you keep track of the maximum values that gets passed to it. If `index` is -1, then it assumes you want to reset the lists. Otherwise, if `value` is `Empty`, then it returns whatever's at that index as an array of the code and index, otherwise it compares the value to what's in the array at index, and replaces if the new value is higher.
+On first calling `Records()`, the function first checks to see if there's anything assigned to `data` and if not, creates and assigns a dictionary object. On exiting the function, it returns the `data` object. Calling `Records()` a second time, the function remembers that `data` has already been assigned and updates and returns `data` instead.
+
+You can use `Static` to create psuedo-objects. This function lets you keep track of the maximum values that gets passed to it. If `index` is -1, then it assumes you want to reset the lists. Otherwise, if `value` is `Empty`, then it returns whatever's at that index as an array of the code and index, otherwise it compares the value to what's in the array at index, and replaces if the new value is higher.
 ```basic
 Private Function MaxValues(Optional index As Long = -1, Optional value As Variant = Empty, Optional code As String = "") As Variant
     Static values() As Variant
@@ -130,17 +133,13 @@ Private Function MaxValues(Optional index As Long = -1, Optional value As Varian
                 codes(index) = code
             End If
         End If
-    
     End If
-        
 End Function
 
 MaxValues                 ' Clears the data
 MaxValues(1)(1)           ' Returns the code of whatever is at index 1
 MaxValues 1, 5.7, "ABC"   ' Compares whats at index 1 with 5.7, and replaces if the value is higher
 ```
-
-On first calling ``Records()``, the function first checks to see if there's anything assigned to ``data`` and if not, creates and assigns a dictionary object. On exiting the function, it returns the ``data`` object. Calling ``Records()`` a second time, the function remembers that ``data`` has already been assigned and updates and returns ``data`` instead.
 
 ## Excel
 
