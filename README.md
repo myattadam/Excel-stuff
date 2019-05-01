@@ -136,7 +136,7 @@ Private Function MaxValues(Optional index As Long = -1, Optional value As Varian
 End Function
 
 MaxValues                 ' Clears the data
-MaxValues 1               ' Returns whatever is at index 1
+MaxValues(1)(1)           ' Returns the code of whatever is at index 1
 MaxValues 1, 5.7, "ABC"   ' Compares whats at index 1 with 5.7, and replaces if the value is higher
 ```
 
